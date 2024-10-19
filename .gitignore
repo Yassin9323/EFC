@@ -1,32 +1,11 @@
 # Node modules
-/node_modules
-
-# Logs
-/logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Build directories
-/build
-/dist
+node_modules
 
 # Environment variables
-/.env
-
-# OS-specific files
-.DS_Store
-Thumbs.db
-
-# Coverage directory
-/coverage
+.env
 
 # Linter cache
-/.eslintcache
-/.prettiercache
-
-# IDE or Editor-specific files
-.vscode
-.idea/
-*.swp
+.eslintcache
+.prettiercache
+.eslintrc.json
+.prettierrc
