@@ -2,7 +2,10 @@
 node_modules
 
 # Environment variables
-.env
+config.env
+
+#Notes
+Notes.txt
 
 # Linter cache
 .eslintcache
