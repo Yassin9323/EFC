@@ -1,14 +1,14 @@
-const Service = require('../models/serviceModel');
+const User = require('../models/userModel');
 
-// Get All Services
-exports.getAllServices = async (req, res) => {
+// Get All Users
+exports.getAllUsers = async (req, res) => {
   try {
-    const service = await Service.find();
+    const users = await User.find();
     res.status(200).json({
       status: 'success',
-      results: service.length,
+      results: users.length,
       data: {
-        service,
+        users,
       },
     });
   } catch (err) {
@@ -19,15 +19,15 @@ exports.getAllServices = async (req, res) => {
   }
 };
 
-// Get Service by ID
-exports.getService = async (req, res) => {
+// Get User by ID
+exports.getUser = async (req, res) => {
   try {
-    const service = await Service.findById(req.params.id);
+    const user = await User.findById(req.params.id);
 
     res.status(200).json({
       status: 'success',
       data: {
-        service,
+        user,
       },
     });
   } catch (err) {
@@ -38,15 +38,15 @@ exports.getService = async (req, res) => {
   }
 };
 
-//Create Service
-exports.createService = async (req, res) => {
+//Create User
+exports.createUser = async (req, res) => {
   try {
     console.log(req.body); // Check if this logs the expected data
-    const newService = await Service.create(req.body); // Ensure 'Service' is the correct model
+    const newUser = await User.create(req.body); // Ensure 'User' is the correct model
     res.status(201).json({
       status: 'success',
       data: {
-        service: newService,
+        User: newUser,
       },
     });
   } catch (err) {
@@ -58,10 +58,10 @@ exports.createService = async (req, res) => {
   }
 };
 
-// Update Service by ID
-exports.updateService = async (req, res) => {
+// Update User by ID
+exports.updateUser = async (req, res) => {
   try {
-    const service = await Service.findByIdAndUpdate(req.params.id, req.body, {
+    const user = await User.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators: true,
     });
@@ -69,7 +69,7 @@ exports.updateService = async (req, res) => {
     res.status(200).json({
       status: 'success',
       data: {
-        service,
+        user,
       },
     });
   } catch (err) {
@@ -80,10 +80,10 @@ exports.updateService = async (req, res) => {
   }
 };
 
-// Delete Service by ID
-exports.deleteService = async (req, res) => {
+// Delete User by ID
+exports.deleteUser = async (req, res) => {
   try {
-    await Service.findByIdAndDelete(req.params.id);
+    await User.findByIdAndDelete(req.params.id);
 
     res.status(204).json({
       status: 'success',
